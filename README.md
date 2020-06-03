@@ -10,8 +10,15 @@ The implemented 3D metaheuristics are:
 * Threshold Accept (TA).
 
 All of the implemented algorithms can be used to find the minimum of 3D function.  
-For example : f(x,y) = x^2+y^2-4
-
+For example :  
+Himmelblau_function
+<p align="center">
+<img src="./images/1.png" width="350" height="300"/>
+</p>
+<p align="center">
+<img src="./images/2.png" width="350" height="50"/>
+<img src="./images/3.png" width="350" height="100"/>
+</p>
 ### Requirement
 ```
 python==3.7.0
@@ -24,34 +31,43 @@ Open test.py you will find some examples
 import src.mt as meta
 import numpy as np
 
-def ackley(x,y):
-    a = -20*np.exp(-0.2*math.sqrt(0.5*(x**2+y**2)))\
-        -np.exp(0.5*(np.cos(2*np.pi*x)+(np.cos(2*np.pi*y))))+np.e+20
+def himmelblau(x,y):
+    a = (x**2+y-11)**2+(x+y**2-7)**2
     return a
 
-func = {
-        "ackley"          : ackley,
-        "beale"           : beale,
-        "goldstein_price" : goldstein_price,
-        "booth"           : booth,
-        "bukin"           : bukin,
-        "matyas"          : matyas,
-        "levi"            : levi,
-        "himmelblau"      : himmelblau,
-        "three_hump_camel": three_hump_camel,
-        "easom"           : easom,
-        "cross_in_tray"   : cross_in_tray,
-        "eggholder"       : eggholder,
-        "holder_table"    : holder_table,
-        "mccormick"       : mccormick,
-        "schaffer_n2"     : schaffer_n2,
-        "schaffer_n4"     : schaffer_n4}
+mt = meta.MT(f=himmelblau,n=1000,x0=4,y0=7,a=10,T=100,verbose=False)
 
-name = sys.argv[1]
-f=func[name]
-
-mt = meta.MT(f=f,n=1000,x0=4,y0=7,a=10,T=100,verbose=False)
-
+Random Search
 x,y = mt.random_search(-100,100)
-print("x =",round(x,5),"\t","y =",round(y,5),"\t","f(x,y) =",round(f(x,y),5))
+x = 3.36113 	  y = 3.0865 	   f(x,y) = 46.11334
+
+Simple Descent
+x,y = mt.simple_descent()
+x = 3.52091 	  y = -1.59771 	 f(x,y) = 0.89862
+
+Deepest Descent
+x,y = mt.deepest_descent()
+x = 3.59936   	 y = -1.86037     f(x,y) = 0.01267
+
+Multistart Descent
+x,y = mt.multistart_descent()
+x = -2.77636 	  y = 3.12107 	 f(x,y) = 0.03041
+
+Tabu Search
+x,y = mt.tabu_search(100)
+x = 2.54073 	   y = 2.54073 	 f(x,y) = 8.00003
+
+Simulated Annealing
+x,y = mt.simulated_annealing(method="linear")
+x = -2.88875 	  y = 3.15219 	 f(x,y) = 0.24931
+
+Threshold Accept
+x,y = mt.threshold_accept(method="linear")
+x = 3.68223 	   y = -2.05492 	f(x,y) = 1.07281
 ```
+### More information
+[Random_Search](https://en.wikipedia.org/wiki/Random_search)   
+[Simple_Descent](https://en.wikipedia.org/wiki/Random_search)   
+[Deepest_Descent](https://en.wikipedia.org/wiki/Random_search)   
+[Multistart_Descent](https://en.wikipedia.org/wiki/Random_search)   
+[Tabu_Search](https://en.wikipedia.org/wiki/Tabu_search)
