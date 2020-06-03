@@ -52,7 +52,7 @@ x = 3.52091 	  y = -1.59771 	 f(x,y) = 0.89862
 
 
 Deepest Descent
-x = 3.59936   	 y = -1.86037     f(x,y) = 0.01267
+x = 3.59936   	  y = -1.86037   f(x,y) = 0.01267
 
 
 Multistart Descent
@@ -60,7 +60,7 @@ x = -2.77636 	  y = 3.12107 	 f(x,y) = 0.03041
 
 
 Tabu Search
-x = 2.54073 	   y = 2.54073 	 f(x,y) = 8.00003
+x = 2.54073 	  y = 2.54073 	 f(x,y) = 8.00003
 
 
 Simulated Annealing
@@ -68,7 +68,7 @@ x = -2.88875 	  y = 3.15219 	 f(x,y) = 0.24931
 
 
 Threshold Accept
-x = 3.68223 	   y = -2.05492 	f(x,y) = 1.07281
+x = 3.68223 	  y = -2.05492   f(x,y) = 1.07281
 ```
 ### More information
 [Random_Search](https://en.wikipedia.org/wiki/Random_search)   
