@@ -52,7 +52,7 @@ x = 3.52091 	  y = -1.59771 	 f(x,y) = 0.89862
 
 
 Deepest Descent
-x = 3.59936   	  y = -1.86037   f(x,y) = 0.01267
+x = 3.59936   	  y = -1.86037 f(x,y) = 0.01267
 
 
 Multistart Descent
