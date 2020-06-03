@@ -38,38 +38,36 @@ def himmelblau(x,y):
 
 mt = meta.MT(f=himmelblau,n=1000,x0=4,y0=7,a=10,T=100,verbose=False)
 
-Random Search
 x,y = mt.random_search(-100,100)
+print("x=",round(x,5),"\t","y=",round(y,5),"\t","f(x,y)=",round(himmelblau(x,y),5))
+```
+#### Result
+```
+Random Search
 x = 3.36113 	  y = 3.0865 	   f(x,y) = 46.11334
 
 
 Simple Descent
-x,y = mt.simple_descent()
 x = 3.52091 	  y = -1.59771 	 f(x,y) = 0.89862
 
 
 Deepest Descent
-x,y = mt.deepest_descent()
 x = 3.59936   	 y = -1.86037     f(x,y) = 0.01267
 
 
 Multistart Descent
-x,y = mt.multistart_descent()
 x = -2.77636 	  y = 3.12107 	 f(x,y) = 0.03041
 
 
 Tabu Search
-x,y = mt.tabu_search(100)
 x = 2.54073 	   y = 2.54073 	 f(x,y) = 8.00003
 
 
 Simulated Annealing
-x,y = mt.simulated_annealing(method="linear")
 x = -2.88875 	  y = 3.15219 	 f(x,y) = 0.24931
 
 
 Threshold Accept
-x,y = mt.threshold_accept(method="linear")
 x = 3.68223 	   y = -2.05492 	f(x,y) = 1.07281
 ```
 ### More information
