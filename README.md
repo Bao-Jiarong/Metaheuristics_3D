@@ -17,15 +17,17 @@ Himmelblau_function
 </p>
 <p align="center">
 <img src="./images/2.png" width="350" height="50"/>
+</p>
+<p align="center">
 <img src="./images/3.png" width="350" height="100"/>
 </p>
+
 ### Requirement
 ```
 python==3.7.0
 numpy==1.18.1
 ```
 ### How to use
-
 Open test.py you will find some examples
 ```
 import src.mt as meta
